@@ -32,37 +32,6 @@ pipeline {
             }
         }
 
-        stage('Deploy to Testing Environment') {
-            when {
-                branch 'testing'
-            }
-            steps {
-                // Add commands to deploy to your testing environment
-                // For example:
-                // sh 'npm run deploy-test'
-            }
-        }
-
-        stage('Deploy to Staging Environment') {
-            when {
-                branch 'staging'
-            }
-            steps {
-                // Add commands to deploy to your staging environment
-                // For example:
-                // sh 'npm run deploy-staging'
-            }
-        }
-
-        stage('Deploy to Production Environment') {
-            when {
-                branch 'production'
-            }
-            steps {
-                // Add commands to deploy to your production environment
-                // For example:
-                // sh 'npm run deploy-prod'
-            }
-        }
+        
     }
 }
