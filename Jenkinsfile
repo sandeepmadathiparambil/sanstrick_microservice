@@ -1,37 +1,45 @@
-// Jenkinsfile for sanstrick-microservices
-
 pipeline {
     agent any
 
     stages {
+        stage('Initialize') {
+            steps {
+                echo 'Initializing the pipeline...'
+                // You can perform any required initialization tasks here
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out the source code...'
+                // Replace 'https://github.com/sample/repo.git' with the actual URL of your Git repository
+                git branch: 'main', url: 'https://github.com/sandeepmadathiparambil/sanstrick_microservice.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                // Add commands to build your microservices and React application
-                // For example:
-                // sh 'npm install'
-                 sh 'npm run build'
+                echo 'Building the Spring Boot application...'
+                // Replace 'mvn' with the actual Maven binary name if required
+                sh 'mvn clean package'
             }
         }
 
-        stage('Test') {
+        stage('Unit Tests') {
             steps {
-                // Add commands to run tests
-                // For example:
-                sh 'npm test'
+                echo 'Running unit tests...'
+                // Replace 'mvn' with the actual Maven binary name if required
+                sh 'mvn test'
             }
         }
 
-        stage('Deploy to Development Environment') {
-            when {
-                branch 'development'
-            }
+        stage('Deployment') {
             steps {
-                // Add commands to deploy to your development environment
-                // For example:
-                 sh 'npm run deploy-dev'
+                echo 'Deploying the microservice...'
+                // For this example, let's assume the microservice is deployed to a test environment
+                // Replace 'http://test-env.example.com' with the actual URL of your test environment
+                sh 'curl -X POST http://18.119.157.80/deploy'
             }
         }
-
-        
     }
 }
