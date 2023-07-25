@@ -19,6 +19,6 @@ public class SanstrickApplication {
 class HelloWorldController {
     @GetMapping("/")
     public String helloWorld() {
-        return "This part is coming from Micro Services";
+        return "build 1";
     }
 }
