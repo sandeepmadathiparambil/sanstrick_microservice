@@ -54,7 +54,7 @@ pipeline {
 				// Use SSH to copy the JAR file to the development server
                 // Make sure you have added the correct path to the JAR_FILE_PATH environment variable
                 script {
-                    sshagent(['bad8bac9-9138-4295-8779-8eb43d52ba7d']) {
+                    sshagent(['jenkins_key_dev']) {
                         // Use the SSH agent to perform the SSH operations securely with the credentials
 						echo "Going to perform the copy command"
                         sh "scp -P ${SSH_PORT} ${JAR_FILE_PATH} ${SSH_USER}@${SSH_HOST}:~/"
