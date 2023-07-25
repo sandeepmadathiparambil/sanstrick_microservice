@@ -1,7 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    environment {
+        // Set MAVEN_OPTS to enable warning for illegal reflective access
+        MAVEN_OPTS = "--illegal-access=warn"
+    }
+	stages {
         stage('Initialize') {
             steps {
                 echo 'Initializing the pipeline...'
