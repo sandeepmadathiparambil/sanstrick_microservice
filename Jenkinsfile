@@ -17,7 +17,7 @@ pipeline {
           steps {
                 echo 'Checking out the source code...'
                 // Replace 'https://github.com/sample/repo.git' with the actual URL of your Git repository
-                git branch: 'main', url: 'https://github.com/sandeepmadathiparambil/sanstrick_microservice.git'
+                git branch: 'development', url: 'https://github.com/sandeepmadathiparambil/sanstrick_microservice.git'
             }
         }
 
