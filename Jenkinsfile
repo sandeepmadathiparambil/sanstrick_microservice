@@ -42,7 +42,7 @@ pipeline {
                 echo 'Deploying the microservice...'
                 // For this example, let's assume the microservice is deployed to a test environment
                 // Replace 'http://test-env.example.com' with the actual URL of your test environment
-                sh 'curl -X POST http://18.119.157.80/deploy' 
+                sh 'curl -X POST http://18.119.157.80:8080/deploy' 
             }
         }
     }
