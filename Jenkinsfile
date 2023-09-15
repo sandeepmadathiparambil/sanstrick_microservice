@@ -10,7 +10,7 @@ pipeline {
         // Define the SSH server details
         SSH_HOST = '3.12.123.7'
         SSH_PORT = 22
-        SSH_USER = 'centos'
+        SSH_USER = 'jenkins'
     }
 	stages {
         stage('Initialize') {
