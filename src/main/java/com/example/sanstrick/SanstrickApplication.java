@@ -19,6 +19,6 @@ public class SanstrickApplication {
 class HelloWorldController {
     @GetMapping("/")
     public String helloWorld() {
-        return "build 2";
+        return "Chembada";
     }
 }

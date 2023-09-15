@@ -8,7 +8,7 @@ pipeline {
 		// Define the path to your Spring Boot JAR file after building
         JAR_FILE_PATH = 'target/sanstrick-0.0.1-SNAPSHOT.jar'
         // Define the SSH server details
-        SSH_HOST = '3.144.94.164'
+        SSH_HOST = '3.12.123.7'
         SSH_PORT = 22
         SSH_USER = 'centos'
     }
